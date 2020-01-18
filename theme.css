@@ -5,6 +5,7 @@ body {
 
 .header {
   display: table;
+  padding: 20px;
   table-layout: fixed;
   background: black;
   color: white;
