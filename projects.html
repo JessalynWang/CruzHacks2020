@@ -17,7 +17,7 @@
   display: block;
   margin: 0 auto;
   }
-</style>
+ </style>
  </head>
   
  <body>
@@ -104,7 +104,6 @@ function collisionDetection() {
           score++;
           if(score == brickRowCount*brickColumnCount) {
             alert("YOU WIN, CONGRATS!");
-            document.location.reload();
           }
         }
       }
@@ -176,7 +175,7 @@ function draw() {
     else {
       lives--;
       if(!lives) {
-        alert("GAME OVER");
+        alert("Game over :((, click ok to restart and cancel to end");
         document.location.reload();
       }
       else {
