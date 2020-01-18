@@ -14,6 +14,11 @@ div.header span {
   text-align:center;
 }
 
+.content {
+  padding: 20px;
+}
+  
+
 img {
   width: 100%;
   height: 100%;
