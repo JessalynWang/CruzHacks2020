@@ -174,7 +174,7 @@ function closest(stop) {
         for (i = 0; i < MF.length; i++) {
             if ((stop == MF[i].getStopName()) && (time == null || time > MF[i].findClosestTimes())) {
                 current_time = (currentDate.getHours()*60) + currentDate.getMinutes();
-                time = MFS[i].findClosestTimes(current_time);
+                time = MF[i].findClosestTimes(current_time);
                 bus = MF[i].getBusName();
     }
 }
