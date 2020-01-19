@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://raw.githubusercontent.com/JessalynWang/CruzHacks2020/master/atari.js"></script>
+  <script src="{{ url_for('static', filename='atari.js') }}"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://jessalynwang.github.io/CruzHacks2020/theme.css">
   <link rel="icon" type:"image/png" href="https://gdurl.com/1Z38">
@@ -22,7 +22,7 @@
  </style>
  </head>
   
- <body>
+ <body onload="start()">
    <nav style="background-color: black; padding: 20px; position: fixed; width: 100%">
      <div class="header">
        <span><a href="https://jessalynwang.github.io/CruzHacks2020/">HOME</a></span>
@@ -213,10 +213,12 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
+function start() {
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         draw();
     }
+}
 }
 	  
 	 </script>
