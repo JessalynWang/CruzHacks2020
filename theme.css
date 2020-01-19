@@ -37,6 +37,8 @@ a:active {
 .titleimg {
     object-fit: cover;
     width: 100%;
+	padding: 30px;
+	text-align: center;
 }
   
 canvas {
