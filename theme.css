@@ -48,3 +48,9 @@ canvas {
 body::-webkit-scrollbar {
 	display: none;
 }
+
+#wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
