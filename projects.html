@@ -206,6 +206,10 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-draw();
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+	draw();
+    }
+}
 </script>
 </html>
