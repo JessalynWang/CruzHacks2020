@@ -35,10 +35,9 @@ a:active {
 }
 
 .titleimg {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
-  height: 90vh;
-  padding: 30px
+  padding: 30px;
 }
   
   
