@@ -39,4 +39,10 @@ a:active {
     width: 100%;
 }
   
+canvas {
+	background: black;
+  display: block;
+  margin: 0 auto;
+  z-score: -10;
+}
   
