@@ -28,7 +28,7 @@
    <button type="button" onclick="closest('Science Hill')">Science Hill</button>
    </div>
    <div class="col-sm-6" id="wrapper">
-   <button type="button" onclick="closest('Cedar & Walnut')">Cedar and Walnut</button>
+   <button type="button" onclick="closest('Cedar and Walnut')">Cedar and Walnut</button>
     </div>
    
 <script>
@@ -177,11 +177,13 @@ function closest(stop) {
                 current_time = (currentDate.getHours()*60) + currentDate.getMinutes();
                 time = MF[i].findClosestTimes(current_time);
                 bus = MF[i].getBusName();
-    }
-}
+            }
+         }
     }
     
+  if (bus != null) {
     alert(bus + " will come to your stop in " + Math.floor(Math.abs(current_time-time)) + " minutes");
+  }
 }
 </script>
    
