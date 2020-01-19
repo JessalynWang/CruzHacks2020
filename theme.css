@@ -37,13 +37,14 @@ a:active {
 .titleimg {
     object-fit: cover;
     width: 100%;
-    overflow: hidden;
 }
   
 canvas {
 	background: black;
   display: block;
   margin: 0 auto;
-  z-score: -10;
 }
   
+body::-webkit-scrollbar {
+	display: none;
+}
