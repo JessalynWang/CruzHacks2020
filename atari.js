@@ -66,8 +66,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if(score == brickRowCount*brickColumnCount) {
-            alert("YOU WIN, CONGRATS!");
-            document.location.reload();
+            drawWin();
           }
         }
       }
@@ -116,6 +115,18 @@ function drawLives() {
   ctx.fillStyle = "#0095DD";
   ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 }
+	
+function drawWin() {
+  ctx.font = "50px Arial";
+  ctx.fillStyle = "white";
+  ctx.fillText("You Win!", canvas.width/2, canvas.height/2);
+}
+	
+function drawLose() {
+  ctx.font = "50px Arial";
+  ctx.fillStyle = "white";
+  ctx.fillText("You Lose :(", canvas.width/2, canvas.height/2);
+}
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -139,7 +150,7 @@ function draw() {
     else {
       lives--;
       if(!lives) {
-        alert("GAME OVER");
+        alert("Game over :((, click ok to restart and cancel to end");
         document.location.reload();
       }
       else {
@@ -164,4 +175,10 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-draw();
+function start() {
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+	draw();
+    }
+}
+}
