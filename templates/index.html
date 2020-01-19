@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>Timely Transit</title>
+<meta charset="UTF-8">
+</head>
+<body>
+    <div class="header" style="background-color: #a5d4ff; width: 98%">
+    <h1 style="text-align: center; padding: 5px">Where is the closest Bus Stop to you?</h1>
+    </div>
+    <div>
+        <input id="santa" type="submit" name="button" value="Santa Cruz Metro Center"/>
+    </div>
+    <div>
+        <input id="science" type="submit" name="button" value="Science Hill"/>
+    </div>
+    <div>
+        <input id="bay" type="submit" name="button" value="Bay and Mission"/>
+    </div>
+    <div>
+        <input id="high" type="submit" name="button" value="High and Laurel"/>
+    </div>
+    <div>
+        <input id="cedar" type="submit" name="button" value="Cedar and Walnut"/>
+    </div>
+    <script src="{{ url_for('static', filename='bustimes.js') }}"></script>
+</body>
+</html>
