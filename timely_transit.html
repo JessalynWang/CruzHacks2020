@@ -24,11 +24,14 @@
    <br><br><br>
    <h1 style="text-align: center">Click on a bus stop to find where the nearest bus is!</h1>
    <br><br><br>
-   <div class="col-sm-6" id="wrapper">
-   <button type="button" onclick="closest('Science Hill')">Science Hill</button>
+   <div class="col-sm-4" id="wrapper">
+   <button type="button" onclick="hahabitch('Science Hill')">Science Hill</button>
    </div>
-   <div class="col-sm-6" id="wrapper">
-   <button type="button" onclick="closest('Cedar and Walnut')">Cedar and Walnut</button>
+   <div class="col-sm-4" id="wrapper">
+   <button type="button" onclick="hahabitch('Cedar and Walnut')">Cedar and Walnut</button>
+    </div>
+    <div class="col-sm-4" id="wrapper">
+   <button type="button" onclick="hahabitch('High and Laurel')">High and Laurel</button>
     </div>
    
 <script>
@@ -49,8 +52,8 @@ class timeTabler {
 
     addMoreTimes(s, e, inc) {
         while (s <= e) {
-            this.times.push(this.s);
-            s += e;
+            this.times.push(s);
+            s += inc;
         }
 
         this.times.sort();
@@ -63,6 +66,8 @@ class timeTabler {
     getStopName() {
         return this.stopName;
     }
+    
+    
 
     findClosestTimes(time) {
         var closestTime = null;
@@ -153,20 +158,19 @@ var SS = [
         SHSS19,
         BMSS16,
         BMSS19,
-        CWSS10,
+        CWSS10
     ];
     
 
-function closest(stop) {
-    alert('I am here!');
+function hahabitch(stop) {
     var time = null;
     var bus = null;
     var currentDate = new Date();
     var current_time = null;
     if ((currentDate.getDay() == 6) || (currentDate.getDay() == 0)) {
         for (i = 0; i < SS.length; i++) {
-            if ((stop == SS[i].getStopName()) && ((time == null) || (time > SS[i].findClosestTimes()))) {
-                current_time = (currentDate.getHours()*60) + currentDate.getMinutes();
+        	current_time = (currentDate.getHours()*60) + currentDate.getMinutes();
+            if ((stop == SS[i].getStopName()) && ((time == null) || (time > SS[i].findClosestTimes(current_time)))) {
                 time = SS[i].findClosestTimes(current_time);
                 bus = SS[i].getBusName();
             }
@@ -174,14 +178,14 @@ function closest(stop) {
     }
     else {
         for (i = 0; i < MF.length; i++) {
-            if ((stop == MF[i].getStopName()) && ((time == null) || (time > MF[i].findClosestTimes()))) {
-                current_time = (currentDate.getHours()*60) + currentDate.getMinutes();
+        current_time = (currentDate.getHours()*60) + currentDate.getMinutes();
+            if ((stop == MF[i].getStopName()) && ((time == null) || (time > MF[i].findClosestTimes(current_time)))) {
                 time = MF[i].findClosestTimes(current_time);
                 bus = MF[i].getBusName();
             }
          }
     }
-    alert(bus + " will come to your stop in " + Math.floor(Math.abs(current_time-time)) + " minutes");
+    alert("A bus will come to your stop in " + Math.abs(time-current_time) + " minutes");
 }
 </script>
    
